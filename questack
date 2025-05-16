@@ -1,0 +1,94 @@
+# Stack Implementation
+class Stack:
+    def __init__(self):
+        self.items = []
+    
+    # Add an item to the top of the stack
+    def push(self, value):
+        self.items.append(value)
+    
+    # Remove and return the top item from the stack
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+        return None  # Return None if stack is empty
+    
+    # Check if stack is empty
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    # Return the top item without removing it
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+        return None
+    
+    # Return the size of the stack
+    def size(self):
+        return len(self.items)
+
+# Queue Implementation
+class Queue:
+    def __init__(self):
+        self.items = []
+    
+    # Add an item to the rear of the queue
+    def enqueue(self, value):
+        self.items.append(value)
+    
+    # Remove and return the front item from the queue
+    def dequeue(self):
+        if not self.is_empty():
+            return self.items.pop(0)
+        return None  # Return None if queue is empty
+    
+    # Check if queue is empty
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    # Return the front item without removing it
+    def peek(self):
+        if not self.is_empty():
+            return self.items[0]
+        return None
+    
+    # Return the size of the queue
+    def size(self):
+        return len(self.items)
+
+# Main function to demonstrate Stack and Queue
+def main():
+    # Stack demonstration
+    print("Stack Demonstration:")
+    stack = Stack()
+    
+    # Push some values
+    print("Pushing: 1, 2, 3")
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    
+    print("Stack size:", stack.size())
+    print("Top element:", stack.peek())
+    print("Popped:", stack.pop())
+    print("Stack size after pop:", stack.size())
+    print("Top element after pop:", stack.peek())
+    
+    # Queue demonstration
+    print("\nQueue Demonstration:")
+    queue = Queue()
+    
+    # Enqueue some values
+    print("Enqueuing: 1, 2, 3")
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    
+    print("Queue size:", queue.size())
+    print("Front element:", queue.peek())
+    print("Dequeued:", queue.dequeue())
+    print("Queue size after dequeue:", queue.size())
+    print("Front element after dequeue:", queue.peek())
+
+if __name__ == "__main__":
+    main()
